@@ -25,7 +25,8 @@ async def scrape_page(page, page_num):
                     email = (await email_elem.inner_text()).strip()
                 else:
                     email = (await p_tags[2].inner_text()).replace("Email:", "").strip()
-            results.append([name, address, phone, email])
+            # Add page number as the first column
+            results.append([page_num, name, address, phone, email])
         except Exception as e:
             print(f"Error scraping a practice: {e}")
             continue
@@ -35,7 +36,7 @@ async def main():
     start_page = int(input("Enter start page: "))
     end_page = int(input("Enter end page: "))
     output_file = "oaa_contacts.csv"
-    header = ['practice name', 'address', 'phone number', 'e-mail']
+    header = ['page number', 'practice name', 'address', 'phone number', 'e-mail']
     # Write header only once
     with open(output_file, 'w', newline='', encoding='utf-8') as f:
         writer = csv.writer(f)
