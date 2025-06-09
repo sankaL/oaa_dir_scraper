@@ -22,7 +22,7 @@ It extracts the practice name, address, phone number, and email address from a u
 
 2. **Create and activate a virtual environment (recommended):**
    ```bash
-   python -m venv venv
+   python3 -m venv venv
    # On macOS/Linux:
    source venv/bin/activate
    # On Windows:
@@ -31,13 +31,13 @@ It extracts the practice name, address, phone number, and email address from a u
 
 3. **Install required dependencies:**
    ```bash
-   pip install playwright
-   pip install csv  # csv is part of Python's standard library, so this is just for clarity
+   pip3 install playwright
+   pip3 install csv  # csv is part of Python's standard library, so this is just for clarity
    ```
 
 4. **Install Playwright browsers:**
    ```bash
-   playwright install
+   python3 -m playwright install
    ```
 
 ---
@@ -46,7 +46,7 @@ It extracts the practice name, address, phone number, and email address from a u
 
 Run the script with:
 ```bash
-python oaa_playwright_scraper.py
+python3 oaa_playwright_scraper.py
 ```
 
 You will be prompted to enter the start and end page numbers (e.g., 1 and 3 to scrape pages 1, 2, and 3).
